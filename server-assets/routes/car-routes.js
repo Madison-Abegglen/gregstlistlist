@@ -12,10 +12,12 @@ router.get('/:id?', (req, res, next) => {
             })
     }
     // otherwise just pull it by its id 
-    Car.findById(req.params.id)
-        .then(car => {
-            res.send(car)
-        })
+    else {
+        Car.findById(req.params.id)
+            .then(car => {
+                res.send(car)
+            })
+    }
 })
 
 // THIS IS YOUR POST 
